@@ -23,5 +23,11 @@ function isPangram(string) {
 //   });
 // }
 
+function isPangram(string) {
+  string = string.toLowerCase();
+  let alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
+  return alphabet.every(letter => string.indexOf(letter) !== -1);
+}
+
 isPangram("The quick brown fox jumps over the lazy dog."); // => true
 // isPangram("This is not a pangram.") // => false
