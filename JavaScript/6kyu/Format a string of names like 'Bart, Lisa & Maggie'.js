@@ -1,3 +1,5 @@
+// https: //www.codewars.com/kata/format-a-string-of-names-like-bart-lisa-and-maggie/train/javascript
+
 // Given: an array containing hashes of names
 
 // Return: a string formatted as a list of names separated by commas except for the last two names, which should be separated by an ampersand.
