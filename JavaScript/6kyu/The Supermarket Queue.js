@@ -11,19 +11,19 @@
 // Please look at the examples and clarifications below, to ensure you understand the task correctly :)
 
 function queueTime(customers, n) {
-    let w = new Array(n).fill(0);
-    for (let t of customers) {
-        let idx = w.indexOf(Math.min(...w));
-        w[idx] += t;
+    let array = new Array(n).fill(0); // ==> let w = [0, 0] 
+    for (let element of customers) {
+        let index = array.indexOf(Math.min(...array));
+        array[index] += element;
     }
-    return Math.max(...w);
+    return Math.max(...array);
 }
 
 // queueTime([5,3,4], 1)
 // // should return 12
 // // because when there is 1 till, the total time is just the sum of the times
 
-queueTime([10, 2, 3, 3], 2)
+queueTime([10, 2, 3, 3], 2);
 // // should return 10
 // // because here n=2 and the 2nd, 3rd, and 4th people in the 
 // // queue finish before the 1st person has finished.
