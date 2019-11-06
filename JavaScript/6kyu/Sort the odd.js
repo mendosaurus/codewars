@@ -40,8 +40,8 @@
 
 // best practice
 function sortArray(array) {
-   const odd = array.filter(number => number % 2).sort((a,b) => a-b);
-   return array.map((x) => x % 2 ? odd.shift() : x);
+   const odd = array.filter(number => number % 2).sort((a,b) => a-b); //create odd array, and sort it in ascending order
+   return array.map(number => number % 2? odd.shift() : number); //if number%2 is truthy, return the first item in odd array
 }
 
 sortArray([5, 333, 2, 8, 1, 4])
