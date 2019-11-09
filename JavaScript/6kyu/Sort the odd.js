@@ -37,7 +37,6 @@
 // 	return result;
 // }
 
-
 // best practice
 function sortArray(array) {
    const odd = array.filter(number => number % 2).sort((a,b) => a-b); //create odd array, and sort it in ascending order
