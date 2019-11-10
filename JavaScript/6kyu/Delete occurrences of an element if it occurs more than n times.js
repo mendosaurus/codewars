@@ -9,10 +9,10 @@
 function deleteNth(arr, n) {
   const repeated = {};
 
-  return arr.filter(nuymber => {
+  return arr.filter(number => {
     console.log(repeated);
-    repeated[nuymber] = (repeated[nuymber] || 0) + 1;
-    const repetitions = repeated[nuymber];
+    repeated[number] = (repeated[number] || 0) + 1;
+    const repetitions = repeated[number];
 
     return repetitions <= n;
   });
