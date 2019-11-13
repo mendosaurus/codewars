@@ -19,7 +19,7 @@ function longestConsec(strarr, k) {
         if (temp.length > newString.length) {
             newString = temp
         }
-    }
+    }Ω
     return newString
 }
 
