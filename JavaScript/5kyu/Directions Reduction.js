@@ -53,17 +53,17 @@ function dirReduc(arr) {
 }
 
 // best practice
-// unction dirReduc(plan) {
-//   var opposite = {
-//     'NORTH': 'SOUTH', 'EAST': 'WEST', 'SOUTH': 'NORTH', 'WEST': 'EAST'};
-//   return plan.reduce(function(dirs, dir){
-//       if (dirs[dirs.length - 1] === opposite[dir])
-//         dirs.pop();
-//       else
-//         dirs.push(dir);
-//       return dirs;
-//     }, []);
-// }
+unction dirReduc(plan) {
+  var opposite = {
+    'NORTH': 'SOUTH', 'EAST': 'WEST', 'SOUTH': 'NORTH', 'WEST': 'EAST'};
+  return plan.reduce(function(dirs, dir){
+      if (dirs[dirs.length - 1] === opposite[dir])
+        dirs.pop();
+      else
+        dirs.push(dir);
+      return dirs;
+    }, []);
+}
 
 dirReduc(["NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH", "WEST"]); //["WEST"]
 // dirReduc(["NORTH", "WEST", "SOUTH", "EAST"])//["NORTH", "WEST", "SOUTH", "EAST"]
