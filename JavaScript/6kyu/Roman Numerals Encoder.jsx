@@ -20,34 +20,66 @@
 
 // More about roman numerals - http://en.wikipedia.org/wiki/Roman_numerals
 
+// function solution(number) {
+//   let result = "",
+//     integers = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1],
+//     romans = [
+// 		"M",
+// 		"CM",
+// 		"D",
+// 		"CD",
+// 		"C",
+// 		"XC",
+// 		"L",
+// 		"XL",
+// 		"X",
+// 		"IX",
+// 		"V",
+// 		"IV",
+// 		"I"
+// 	];
+
+//   integers.map((value, index) => {
+//     while (number >= value) {
+//       result += romans[index];
+//       console.log(result, number,value,number-value)
+// 			number -= value;
+//     }
+//   });
+
+//   return result;
+// }
+
+// best practice
 function solution(number) {
-  let result = "",
-    integers = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1],
-    romans = [
-      "M",
-      "CM",
-      "D",
-      "CD",
-      "C",
-      "XC",
-      "L",
-      "XL",
-      "X",
-      "IX",
-      "V",
-      "IV",
-      "I"
-    ];
+  // convert the number to a roman numeral
+  var roman = {
+    M: 1000,
+    CM: 900,
+    D: 500,
+    CD: 400,
+    C: 100,
+    XC: 90,
+    L: 50,
+    XL: 40,
+    X: 10,
+    IX: 9,
+    V: 5,
+    IV: 4,
+    I: 1
+  };
 
-  integers.map((value, index) => {
-    while (number >= value) {
-      result += romans[index];
-      console.log(result, number, value, number - value);
-      number -= value;
+  var ans = "";
+  while (number > 0) {
+    for (a in roman) {
+      if (roman[a] <= number) {
+        ans += a;
+        number -= roman[a];
+        break;
+      }
     }
-  });
-
-  return result;
+  }
+  return ans;
 }
 
 // solution(1); //'I'
