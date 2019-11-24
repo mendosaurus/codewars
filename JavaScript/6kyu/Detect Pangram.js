@@ -17,7 +17,7 @@ function isPangram(string) {
 // best practice
 // function isPangram(string) {
 //   string = string.toLowerCase();
-//   return "abcdefghijklmnopqrstuvwxyz".split("").every(function(x) {  //The every() method checks if all elements in an array pass a test (provided as a function).
+//   return "abcdefghijklmnopqrstuvwxyz".split("").every(function(x) {  //every() method checks if all elements in an array pass a test (provided as a function).
 
 //     return string.indexOf(x) !== -1;  //indexOf() method returns the position of the first occurrence of a specified value in a string. This method returns -1 if the value to search for never occurs.
 //   });
