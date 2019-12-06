@@ -3,6 +3,8 @@
 
 function solution(str) {
   let split = str.match(/.{1,2}/g);
+  // the dot matches any character except live breaks
+  // {quantifier} matches the specified quantity of the previous token. {1,3} will match 1 to 3. {3} will match exactly 3. {3,} will match 3 or more.
   return split.map(element => {
     return element.length === 2 ? element : element + "_";
   });
