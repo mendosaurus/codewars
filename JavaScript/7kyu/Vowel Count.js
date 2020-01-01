@@ -18,7 +18,7 @@
 //   return vowelsCount;
 // }
 
-// best practice
+// second solition
 function getCount(str) {
   var vowelsCount = 0;
   let vowels = ["a", "e", "i", "o", "u"];
@@ -36,6 +36,11 @@ function getCount(str) {
 
   return vowelsCount;
 }
+
+// best practice
+// function getCount(str) {
+//   return (str.match(/[aeiou]/gi) || []).length;
+// }
 
 getCount("abracadabraghgbbhgidhfbbf");
 // should return 5
