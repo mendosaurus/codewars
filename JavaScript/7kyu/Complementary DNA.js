@@ -66,11 +66,12 @@
 // best practice
 function DNAStrand(dna) {
   return dna.replace(/./g, function(c) {
-    return DNAStrand.pairs[c];
+    console.log(c, pairs[c]);
+    return pairs[c];
   });
 }
 
-DNAStrand.pairs = {
+let pairs = {
   A: "T",
   T: "A",
   C: "G",
