@@ -18,14 +18,17 @@
 // Notes and tips: using the solution to the other kata to check your function may be helpful, but as much larger numbers will be used, using an array/list to compute the number of the survivor may be too slow; you may assume that both n and k will always be >=1.
 
 function josephusSurvivor(n, k) {
-  let arr = [];
-  for (let i = 1; i <= n; i++) {
-    arr.push(i);
-  }
+  // let arr = []
+  // for (let i =1 ; i<=n; i++){
+  // 	arr.push(i)
+  // }
+
+  let arr = Array.from(Array(n), (x, index) => index + 1);
 
   let i = 0;
   while (arr.length > 1) {
     i = (i + k - 1) % arr.length;
+    console.log(i);
     arr.splice(i, 1);
   }
   return arr[0];
