@@ -23,6 +23,8 @@ function josephusSurvivor(n, k) {
   // 	arr.push(i)
   // }
 
+  // create array of n empty slots with Array(n)
+  // then put index+1 in each slots to make an array of numbers from 1 to n
   let arr = Array.from(Array(n), (x, index) => index + 1);
 
   let i = 0;
