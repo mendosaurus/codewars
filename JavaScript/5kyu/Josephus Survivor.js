@@ -23,6 +23,8 @@ function josephusSurvivor(n, k) {
   // 	arr.push(i)
   // }
 
+  // Array.from() creates a new, shallow-copied Array instance from an array-like or iterable object.
+  // Inside Array.from(),
   // create array of n empty slots with Array(n)
   // then put index+1 in each slots to make an array of numbers from 1 to n
   let arr = Array.from(Array(n), (x, index) => index + 1);
