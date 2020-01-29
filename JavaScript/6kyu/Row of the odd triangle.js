@@ -21,3 +21,10 @@ function oddRow(n) {
   }
   return arr;
 }
+
+// best practice
+function oddRow(n) {
+  return Array(n)
+    .fill(0)
+    .map((_, i) => n * n - n + 1 + i * 2);
+}
