@@ -46,14 +46,35 @@
 //   },
 // ]
 
+// function ranking(people) {
+//   return people
+//     .sort((a, b) =>
+//       a.points === b.points ? a.name.localeCompare(b.name) : b.points - a.points
+//     )
+//     .map((person, _, array) => {
+//       const position =
+//         array.findIndex(({ points }) => person.points === points) + 1;
+//       return { ...person, position };
+//     });
+// }
+
+// best practice
 function ranking(people) {
-  return people
-    .sort((a, b) =>
-      a.points === b.points ? a.name.localeCompare(b.name) : b.points - a.points
-    )
-    .map((person, _, array) => {
-      const position =
-        array.findIndex(({ points }) => person.points === points) + 1;
-      return { ...person, position };
+  let rankingData = [];
+  people
+    .sort((prev, next) => {
+      if (next.points === prev.points) {
+        return prev.name.localeCompare(next.name);
+      }
+      return next.points - prev.points;
+    })
+    .forEach((item, index) => {
+      const prevItem = rankingData[index - 1] || {};
+      rankingData.push({
+        ...item,
+        position:
+          prevItem.points === item.points ? prevItem.position : index + 1
+      });
     });
+  return rankingData;
 }
