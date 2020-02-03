@@ -14,24 +14,31 @@
 // 0 <= x <= 4
 // 0 <= y <= 4
 
-function points(games) {
-  let total = 0;
+// function points(games) {
+//   let total = 0;
 
-  for (let i = 0; i < games.length; i++) {
-    let eachGame = games[i].split(":");
-    let x = Number(eachGame[0]),
-      y = Number(eachGame[1]);
-    console.log(x, y);
-    if (x > y) {
-      total += 3;
-    } else if (x < y) {
-      total = total;
-    } else {
-      total += 1;
-    }
-  }
-  return total;
-}
+//   for (let i = 0; i < games.length; i++) {
+//     let eachGame = games[i].split(":");
+//     let x = Number(eachGame[0]),
+//       y = Number(eachGame[1]);
+//     console.log(x, y);
+//     if (x > y) {
+//       total += 3;
+//     } else if (x < y) {
+//       total = total;
+//     } else {
+//       total += 1;
+//     }
+//   }
+//   return total;
+// }
+
+//best practice
+const points = games =>
+  games.reduce((output, current) => {
+    return (output +=
+      current[0] > current[2] ? 3 : current[0] === current[2] ? 1 : 0);
+  }, 0);
 
 points(["1:0", "2:0", "3:0", "4:0", "2:1", "3:1", "4:1", "3:2", "4:2", "4:3"]); // =>30
 
