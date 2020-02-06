@@ -9,6 +9,17 @@
 
 var maxSequence = function(arr) {
   // ...
+  let min = 0,
+    answer = 0,
+    sum = 0;
+
+  for (let i = 0; i < arr.length; i++) {
+    sum += arr[i];
+    console.log(sum, min, answer);
+    min = Math.min(sum, min);
+    answer = Math.max(answer, sum - min);
+  }
+  return answer;
 };
 
 maxSequence([-2, 1, -3, 4, -1, 2, 1, -5, 4]);
