@@ -14,3 +14,8 @@ function breakChocolate(n, m) {
     return 0;
   }
 }
+
+//best practice
+let breakChocolate = (n, m) => {
+  return n * m === 0 ? 0 : n * m - 1;
+};
