@@ -22,4 +22,4 @@ function calculate(str) {
 }
 
 // calculate("1plus2plus3plus4")
-calculate("1plus2plus3minus4");
+// calculate("1plus2plus3minus4");
