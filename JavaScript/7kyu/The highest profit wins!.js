@@ -11,10 +11,18 @@
 // Remarks
 // All arrays or lists will always have at least one element, so you don't need to check the length. Also, your function will always get an array or a list, you don't have to check for null, undefined or similar.
 
+// https://medium.com/@vladbezden/how-to-get-min-or-max-of-an-array-in-javascript-1c264ec6e1aa
+
+// using destructing assignment
 function minMax(arr) {
   let min = Math.min(...arr);
   let max = Math.max(...arr);
   return (result = [min, max]);
+}
+
+// use ES6.ES2015 apply method
+function minMax(arr) {
+  return [Math.min.apply(null, arr), Math.max.apply(null, arr)];
 }
 
 // var test = function (arr, res) {
