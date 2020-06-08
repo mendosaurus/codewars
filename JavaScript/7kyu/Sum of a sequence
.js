@@ -1,3 +1,4 @@
+// https://www.codewars.com/kata/586f6741c66d18c22800010a
 // Your task is to make function, which returns the sum of a sequence of integers.
 
 // The sequence is defined by 3 non-negative values: begin, end, step.
@@ -11,6 +12,13 @@
 // sequenceSum(1,5,1) === 15 // 1 + 2 + 3 + 4 + 5
 // sequenceSum(1,5,3) === 5 // 1 + 4
 // This is the first kata in the series:
+
+const sequenceSum = (begin, end, step) => {
+  if (begin > end) {
+    return 0;
+  }
+  return begin + sequenceSum(begin + step, end, step);
+};
 
 // 1) Sum of a sequence (this kata)
 // 2) Sum of a Sequence [Hard-Core Version]
