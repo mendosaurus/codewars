@@ -5,6 +5,16 @@
 
 // Note: The function accepts an integer and returns an integer
 
-https: function squareDigits(num) {
-  //may the code be with you
+function squareDigits(num) {
+  let strNum = String(num);
+  let newNum = "";
+
+  for (i = 0; i < strNum.length; i++) {
+    newNum += strNum[i] * strNum[i];
+  }
+
+  return Number(newNum);
 }
+
+// squareDigits(9119);
+// 811181
