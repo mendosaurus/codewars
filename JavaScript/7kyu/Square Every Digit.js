@@ -5,15 +5,28 @@
 
 // Note: The function accepts an integer and returns an integer
 
+// // initial answer
+// function squareDigits(num) {
+//   let strNum = String(num);
+//   let newNum = "";
+
+//   for (i = 0; i < strNum.length; i++) {
+//     newNum += strNum[i] * strNum[i];
+//   }
+
+//   return Number(newNum);
+// }
+
+// best practice
 function squareDigits(num) {
-  let strNum = String(num);
-  let newNum = "";
-
-  for (i = 0; i < strNum.length; i++) {
-    newNum += strNum[i] * strNum[i];
-  }
-
-  return Number(newNum);
+  return Number(
+    ("" + num)
+      .split("")
+      .map(function (val) {
+        return val * val;
+      })
+      .join("")
+  );
 }
 
 // squareDigits(9119);
