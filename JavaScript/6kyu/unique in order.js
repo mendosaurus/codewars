@@ -16,26 +16,25 @@
 // }
 
 // best practice
-function uniqueInOrder(it) {
-    var result = []
-    var last
+function uniqueInOrder(iterable) {
+  var result = [];
+  var last;
 
-    for (var i = 0; i < it.length; i++) {
-        if (it[i] !== last) {
-            last = it[i]
-            result.push(it[i])
-        }
+  for (var i = 0; i < iterable.length; i++) {
+    if (iterable[i] !== last) {
+      last = iterable[i];
+      result.push(iterable[i]);
     }
+  }
 
-    return result
+  return result;
 }
 
-
 // call function
-uniqueInOrder('AAAABBBCCDAABBB')
+uniqueInOrder("AAAABBBCCDAABBB");
 // == ['A', 'B', 'C', 'D', 'A', 'B']
 
-// uniqueInOrder('ABBCcAD')         
+// uniqueInOrder('ABBCcAD')
 // == ['A', 'B', 'C', 'c', 'A', 'D']
 
 // uniqueInOrder([1,2,2,3,3])
