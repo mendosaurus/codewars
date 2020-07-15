@@ -21,15 +21,13 @@
 //return the total number of smiling faces in the array
 
 function countSmileys(arr) {
-  const faces = [":)", ":D", ";-D", ":~)", ":-D", ";~D"];
-
-  let number = 0;
-  arr.forEach((face, index, arr) => {
-    if (faces.includes(face)) {
-      number++;
+  let count = 0;
+  arr.forEach((face) => {
+    if (/(\:|\;)(\~|\-)?(\)|D)/.test(face)) {
+      count++;
     }
   });
-  return number;
+  return count;
 }
 
 countSmileys([":D", ":~)", ";~D", ":)"]);
