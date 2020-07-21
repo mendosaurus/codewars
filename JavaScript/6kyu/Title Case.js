@@ -18,4 +18,22 @@
 // titleCase('THE WIND IN THE WILLOWS', 'The In') // should return: 'The Wind in the Willows'
 // titleCase('the quick brown fox') // should return: 'The Quick Brown Fox'
 
-function titleCase(title, minorWords) {}
+function titleCase(title, minorWords) {
+  let minorWordsArr =
+    typeof minorWords !== "undefined"
+      ? minorWords.toLowerCase().split(" ")
+      : [];
+
+  return title
+    .toLowerCase()
+    .split(" ")
+    .map((value, i) => {
+      if (value != "" && (minorWordsArr.indexOf(value, i) === -1 || i === 0)) {
+        value = value.split("");
+        value[0] = value[0].toUpperCase();
+        value = value.join("");
+      }
+      return value;
+    })
+    .join(" ");
+}
