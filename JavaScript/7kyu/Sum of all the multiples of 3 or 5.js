@@ -10,5 +10,13 @@
 // findSum(10) should return 33 (3 + 5 + 6 + 9 + 10)
 
 function findSum(n) {
-  return 0;
+  const arr = [];
+  for (i = 1; i <= n; i++) {
+    if (i % 3 === 0 || i % 5 === 0) {
+      arr.push(i);
+    }
+  }
+  return arr.reduce((acc, current) => acc + current);
 }
+
+findSum(10);
