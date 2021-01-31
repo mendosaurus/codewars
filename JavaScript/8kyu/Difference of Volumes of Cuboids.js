@@ -8,11 +8,23 @@
 
 // If you can, try writing it in one line of code.
 
+// //first solution
+// function findDifference(a, b) {
+//   const a_volume = a[0] * a[1] * a[2];
+//   const b_volume = b[0] * b[1] * b[2];
+//   const difference = Math.abs(a_volume - b_volume);
+//   return difference;
+// }
+
+// second solution
 function findDifference(a, b) {
-  const a_volume = a[0] * a[1] * a[2];
-  const b_volume = b[0] * b[1] * b[2];
-  const difference = Math.abs(a_volume - b_volume);
-  return difference;
+  const a_volume = a.reduce(
+    (currentValue, previousValue) => currentValue * previousValue
+  );
+  const b_volume = b.reduce(
+    (currentValue, previousValue) => currentValue * previousValue
+  );
+  return Math.abs(a_volume - b_volume);
 }
 
 // Sample tests:
