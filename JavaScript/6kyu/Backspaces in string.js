@@ -11,7 +11,16 @@
 // ""              ==>  ""
 
 function cleanString(s) {
-  // ... your code ...
+  const arr = s.split("");
+  let result = [];
+  arr.forEach((current, index, arr) => {
+    if (current === "#") {
+      result.pop();
+    } else {
+      result.push(current);
+    }
+  });
+  return result.join("");
 }
 
 // Test.assertEquals(cleanString("abc#d##c"), "ac");
