@@ -10,16 +10,30 @@
 // "#######"       ==>  ""
 // ""              ==>  ""
 
+// // use forEach() method
+// function cleanString(s) {
+//   const arr = s.split("");
+//   let result = [];
+//   arr.forEach((current, index, arr) => {
+//     if (current === "#") {
+//       result.pop();
+//     } else {
+//       result.push(current);
+//     }
+//   });
+//   return result.join("");
+// }
+
+// use for/of statement to loop through each characters in a string
 function cleanString(s) {
-  const arr = s.split("");
-  let result = [];
-  arr.forEach((current, index, arr) => {
-    if (current === "#") {
+  const result = [];
+  for (character of s) {
+    if (character === "#") {
       result.pop();
     } else {
-      result.push(current);
+      result.push(character);
     }
-  });
+  }
   return result.join("");
 }
 
