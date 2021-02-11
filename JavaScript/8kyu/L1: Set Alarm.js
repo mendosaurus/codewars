@@ -4,14 +4,17 @@
 
 // The function should return true if you are employed and not on vacation (because these are the circumstances under which you need to set an alarm). It should return false otherwise. Examples:
 
-// first solution
-function setAlarm(employed, vacation) {
-  if (employed && !vacation) {
-    return true;
-  } else {
-    return false;
-  }
-}
+// // first solution
+// function setAlarm(employed, vacation) {
+//   if (employed && !vacation) {
+//     return true;
+//   } else {
+//     return false;
+//   }
+// }
+
+// use arrow function
+const setAlarm = (employed, vacation) => employed && !vacation;
 
 // setAlarm(true, true) -> false
 // setAlarm(false, true) -> false
