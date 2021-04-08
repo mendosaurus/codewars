@@ -13,3 +13,24 @@
 // < 70 >= 40 = 'Happy!'
 // < 100 >= 70 = 'Sad!'
 // > 100 = 'Miserable!'
+
+function paul(x){
+    let score = 0
+    
+    x.forEach(element => {
+        if(element === 'kata'){
+            score += 5
+        }
+        else if(element === 'Petes kata'){
+            score += 10
+        }
+        else if(element === 'eating'){
+            score += 1
+        }
+    });
+
+      return score < 40 ? 'Super happy!'
+        : score < 70 ? condition = 'Happy!' 
+        : score < 100 ? condition = 'Sad!'
+        : 'Miserable!'
+}
