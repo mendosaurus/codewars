@@ -14,23 +14,36 @@
 // < 100 >= 70 = 'Sad!'
 // > 100 = 'Miserable!'
 
-function paul(x){
-    let score = 0
+// // use arr.forEach()
+// function paul(x){
+//     let score = 0
     
-    x.forEach(element => {
-        if(element === 'kata'){
-            score += 5
-        }
-        else if(element === 'Petes kata'){
-            score += 10
-        }
-        else if(element === 'eating'){
-            score += 1
-        }
-    });
+//     x.forEach(element => {
+//         if(element === 'kata'){
+//             score += 5
+//         }
+//         else if(element === 'Petes kata'){
+//             score += 10
+//         }
+//         else if(element === 'eating'){
+//             score += 1
+//         }
+//     });
 
-      return score < 40 ? 'Super happy!'
-        : score < 70 ? condition = 'Happy!' 
-        : score < 100 ? condition = 'Sad!'
-        : 'Miserable!'
+//       return score < 40 ? 'Super happy!'
+//         : score < 70 ? condition = 'Happy!' 
+//         : score < 100 ? condition = 'Sad!'
+//         : 'Miserable!'
+// }
+
+// use arr.reduce()
+function paul(x){
+  const obj = {kata: 5, 'Petes kata': 10, life: 0, eating: 1}
+  const score = x.reduce((acc, current) => acc += obj[current],0)
+  console.log(score)
+
+  return score < 40 ? 'Super happy!'
+    : score < 70 ? condition = 'Happy!' 
+    : score < 100 ? condition = 'Sad!'
+    : 'Miserable!'
 }
