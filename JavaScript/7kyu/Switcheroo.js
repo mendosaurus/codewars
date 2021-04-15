@@ -6,18 +6,34 @@
 // 'acb' --> 'bca'
 // 'aabacbaa' --> 'bbabcabb'
 
+// // forEach()
+// function switcheroo(x){
+// 	const arr = x.split('')
+// 	const result = []
+//     arr.forEach(letter => {
+//         if(letter==='a'){
+//             result.push('b')
+//         } 
+//         else if(letter==='b'){
+//             result.push('a')
+//         }
+//         else(result.push(letter))
+//     }
+// 	)
+// 	return result.join('')
+// }
+
+// map()
 function switcheroo(x){
 	const arr = x.split('')
-	const result = []
-    arr.forEach(letter => {
-        if(letter==='a'){
-            result.push('b')
-        } 
-        else if(letter==='b'){
-            result.push('a')
-        }
-        else(result.push(letter))
-    }
-	)
-	return result.join('')
+	return arr.map(letter => {
+			if(letter==='a'){
+				return 'b'
+			} 
+			else if(letter==='b'){
+				return 'a'
+			}
+			else return letter
+		}
+	).join('')
 }
